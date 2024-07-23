@@ -6,27 +6,23 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Hello world!");
-        shouldWakeUp (true, 1);
 
-        shouldWakeUp (false, 2);
-
-        shouldWakeUp (true, 8);
-
-        shouldWakeUp (true, -1);
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int clock) {
-        if(clock>8 && clock<16){
-            if(isBarking){
+        if(clock>0 && clock<8 ||clock>20 && clock<24) {
+                    if (isBarking) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+
+             }else if(clock<0 || clock>23){
                 return false;
-            }else{
-                return true;
-            }
-        }else if(clock<0 || clock>23){
-            return false;
         }else{
-            return true;
+            return false;
         }
+
     }
 
     public static boolean hasTeen(int firstAge, int secondAge, int thirdAge) {
@@ -48,10 +44,10 @@ public class Main {
                 return false;
             }
         } else {
-            if (temp > 36 && temp < 24) {
-                return false;
-            } else {
+            if (temp < 36 && temp >24) {
                 return true;
+            } else {
+                return false;
             }
 
 
